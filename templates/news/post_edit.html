@@ -1,0 +1,42 @@
+{% extends 'flatpages/default.html' %}
+
+{% load i18n %}
+
+{% block user_name %}
+    '{{ user }}'
+{% endblock user_name %}
+
+{% block content %}
+<h1>{% trans "New Post" %}</h1>
+<em><p style="width: 200px; text-align: left;"><a href="/news/" class="previous">&laquo; {% trans "News List" %}</a> &nbsp;
+<a onClick="history.go(-1);" class="previous"> &laquo; {% trans "back" %}</a></em></p>
+
+<hr>
+{% if user_is_author or user.is_superuser or upd_is_author or is_author_group %}
+   <form action="" method="post">
+       {% csrf_token %}
+
+       <p>{% trans "Author" %}: <strong>'{{ author_name }}'</strong></p>
+
+       <!--       show author_list-->
+       {% if user.is_superuser %}
+       <p>{% trans "Choose an Author" %}: <select required name="author" id="id_author">
+           <option value="" selected>{{ post_author }}</option>
+<!--            <option value="" selected>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
+            {% for author in author_list %}
+           <option value="{{ author }}">{{ author }}</option>
+            {% endfor %}
+
+       </select></p>
+        {% endif %}
+       {{ form.as_p }}
+            {% trans "Save" as Save %} 
+<!--       <input type='hidden' name="author" value="{{ form.author }}" />-->
+       <input type="submit" value="{{ Save }}" />
+   </form>
+{% else %}
+<h5><a>{% trans "You have to become an Author to create posts" %}</a></h5>
+<a href="{% url 'author_create' %}"><button class="mt-3 btn-primary" type="button">{% trans "Become an Author" %}</button></a>
+{% endif %}
+{% endblock content %}
+

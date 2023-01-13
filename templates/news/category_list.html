@@ -1,0 +1,116 @@
+
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load i18n %}
+
+{% load custom_filters %} <!--Где сustom_filters — это название Python файла, который мы создали в папке news/templatetags/.-->
+
+{% load custom_tags %}
+
+{% block user_name %}
+    '{{ user }}'
+{% endblock user_name %}
+
+{% block title1 %}
+    {% trans "News List" %} 
+{% endblock title1 %}
+
+{% block content %}
+
+
+   <h1>{% trans "News List" %} </h1>
+   <h3>{% current_time2 %}</h3>
+    {% if is_not_subscriber %}
+        <td><p style="text-align: center;"><a href="{% url 'subscribe' category.id %}"><button class="mt-3 btn-primary" type="button"> {% trans "Subscribe" %}</button></a></p></td>
+    {% endif %}
+    <table style="width: 1290px">
+        <tr>
+            <td><em><p style="width: 645px; text-align: left;">{% trans "Amount of news on the page" %}: {{ category_news_list|length }} </p></em></td>
+            <td><em><p style="width: 645px; text-align: right;">{% trans "Total amount of news" %}: {{  news_number }} </p></em></td>
+        </tr>
+    </table>
+
+<table>
+    <tr>
+        <td><p style="width: 645px; text-align: left;"><a href="/news/create"><button class="mt-3 btn-primary" type="button"> {% trans "Add News" %}</button></a></p></td>
+        <td><p style="width: 645px; text-align: right;"><a href="/news/search"><button class="mt-3 btn-primary" type="button"> {% trans "Detailed Search" %}</button></a></p></td>
+    </tr>
+</table>
+   <hr>
+   {% if category_news_list %}
+       <table style="height: 24px; "width="1300">
+
+        <tr style="background-color:{% cycle 'white' 'lightblue' %}">
+            <td style="width: 500px; text-align: center;"><strong> {% trans "Topic" %}</strong> </td>
+            <td style="width: 400px; text-align: center;"><strong> {% trans "Post" %}</strong> </td>
+            <td style="width: 300px; text-align: center;"><strong> {% trans "Category" %}</strong> </td>
+            <td style="width: 200px; text-align: center;"><strong> {% trans "Creating date" %} </strong></td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Type" %}</strong> </td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Author" %} </strong></td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Rating" %}</strong> </td>
+           </tr>
+
+           {% for news_ in category_news_list %}
+           <tr style="background-color:{% cycle 'lightblue' 'white' %}">
+               <td style="text-align: left;"> <a class="nav-link" href="/news/{{ news_.id }}"> {{ news_.topic|censor|truncatewords:4 }} </a></td>
+               <td style="text-align: left;"><a class="nav-link" href="/news/{{ news_.id }}">{{ news_.content|censor|truncatechars:20 }}</a></td>
+
+               <td>
+                   {% for category in news_.postCategory.all %}
+                        <a href="{% url 'category_list' category.id %}">{{ category }}</a>
+                   {% endfor %}
+
+               </td>
+               <td>{{ news_.createTime|date:'d M Y' }}</td>
+               <td>{{ news_.contentType }}</td>
+               <td>{{ news_.author }}</td>
+               <td>{{ news_.rating }}</td>
+           </tr>
+           {% endfor %}
+        <caption>{{ time_now|date:'M d Y l' }}</caption>
+        </table>
+   {% else %}
+       <h2>No news</h2>
+   {% endif %}
+
+  {# Добавляем пагинацию на страницу #}
+
+    {# Добавляем "<" #}
+    {% if page_obj.has_previous %}
+
+       <a href="?{% url_replace page=page_obj.previous_page_number %}"><</a>
+
+    {% endif %}
+
+   {# Информация о предыдущих страницах #}
+   {% if page_obj.has_previous %}
+       <a href="?{% url_replace page=1 %}">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+
+   {# Информация о текущей странице #}
+   {{ page_obj.number }}
+
+   {# Информация о следующих страницах #}
+   {% if page_obj.has_next %}
+       <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+    {# Добавляем ">" #}
+    {% if page_obj.has_next %}
+
+       <a href="?{% url_replace page=page_obj.next_page_number %}">></a>
+
+    {% endif %}
+
+
+{% endblock content %}
+
+

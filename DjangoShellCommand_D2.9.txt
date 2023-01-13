@@ -1,0 +1,135 @@
+
+
+Что вы должны сделать в консоли Django?
+
+1. Создать двух пользователей (с помощью метода User.objects.create_user('username')).
+
+from news.models import *
+User.objects.create_user('user1')
+User.objects.create_user('user2')
+
+2. Создать два объекта модели Author, связанные с пользователями.
+
+Author1 = User.objects.get(username='user1')
+Author.objects.create(authorUser=Author1)
+Author2 = User.objects.get(username='user2')
+Author.objects.create(authorUser=Author2)
+
+3. Добавить 4 категории в модель Category.
+
+Category.objects.create(name='Politics')
+Category.objects.create(name='Sport')
+Category.objects.create(name='Industry')
+Category.objects.create(name='Finance')
+
+4.Добавить 2 статьи и 1 новость.
+
+Author1 = Author.objects.get(id=1)
+Author2 = Author.objects.get(id=2)
+Post.objects.create(contentType="news", author=Author1, topic="ЛУКОЙЛ получил согласие всех держателей еврооблигаций на изменение условий выпуска",
+                content="ЛУКОЙЛ завершил процесс получения согласия держателей долларовых еврооблигаций на внесение изменений в эмиссионную документацию по 5 выпускам.")
+Post.objects.create(contentType="post", author=Author1, topic="Статья про спорт", content="РУБЛЕВ ОБЫГРАЛ КОРДУ В ФИНАЛЕ ТЕННИСНОГО ТУРНИРА В ХИХОНЕ")
+Post.objects.create(contentType="post", author=Author2, topic="Статья про производство", content="из-за энергетического кризиса производство автомашин в Европе заметно сократится")
+
+5. Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+
+Post.objects.get(id=1).postCategory.add(Category.objects.get(id=3))
+Post.objects.get(id=1).postCategory.add(Category.objects.get(id=4))
+Post.objects.get(id=2).postCategory.add(Category.objects.get(id=2))
+Post.objects.get(id=3).postCategory.add(Category.objects.get(id=3))
+
+6. Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
+
+Comment.objects.create(text="новость улет!", commentPost=Post.objects.get(id=1), commentUser=Author.objects.get(id=1).authorUser)
+Comment.objects.create(text="Наконец-то!", commentPost=Post.objects.get(id=1), commentUser=Author.objects.get(id=2).authorUser)
+Comment.objects.create(text="Ну вот, только тачку хотел взять(((", commentPost=Post.objects.get(id=3), commentUser=Author.objects.get(id=2).authorUser)
+Comment.objects.create(text="Ничего нового в этом тенисе", commentPost=Post.objects.get(id=2), commentUser=Author.objects.get(id=1).authorUser)
+
+7. Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.
+
+Post.objects.get(id=1).like()
+Post.objects.get(id=1).like()
+Post.objects.get(id=3).like()
+Post.objects.get(id=2).dislike()
+
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=3).dislike()
+Comment.objects.get(id=3).dislike()
+
+8. Обновить рейтинги пользователей.
+
+Author.objects.get(id=1).update_rating()
+Author.objects.get(id=2).update_rating()
+
+9. Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+
+from django.db.models import Max
+max_rate = Author.objects.all().aggregate(Max('authorRating'))['authorRating__max']
+user = User.objects.filter(author__authorRating=max_rate).values("username")[0]['username']
+print = f"max rating: {max_rate} for user: {user}"
+print
+
+10. Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
+
+from django.db.models import Max
+max_post_rate = Post.objects.all().aggregate(Max('rating'))['rating__max']
+date = Post.objects.filter(rating=max_post_rate).values("createTime")[0]['createTime'].date()
+time = Post.objects.filter(rating=max_post_rate).values("createTime")[0]['createTime'].time()
+topic = Post.objects.filter(rating=max_post_rate).values("topic")[0]['topic']
+prev = Post.objects.get(rating=max_post_rate).preview()
+user_id = Post.objects.filter(rating=max_post_rate).values("author")[0]['author']
+user_ = Author.objects.filter(post__author=user_id).values('authorUser_id')[0]['authorUser_id']
+user = User.objects.filter(author__authorUser_id=user_).values("username")[0]['username']
+print = f"Лучшая статья: {topic}"
+print1 = f"Кратко: {prev}"
+print2 = f"Рейтинг: {max_post_rate}, Автор: {user}, Дата добавления: {date}, Время добавления: {time}"
+print
+print1
+print2
+
+11. Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+
+post = Post.objects.filter(rating=max_post_rate)[0]
+all_post_comments = Comment.objects.filter(commentPost=post)
+com_user1 = all_post_comments.values('commentUser_id')[0]['commentUser_id']
+com_user2 = all_post_comments.values('commentUser_id')[1]['commentUser_id']
+user1 = User.objects.filter(comment__commentUser_id=com_user1).values("username")[0]['username']
+user2 = User.objects.filter(comment__commentUser_id=com_user2).values("username")[0]['username']
+
+for n, i in enumerate(all_post_comments.values()):
+    f"comment #{n+1}: '{i['text']}', rating: {i['rating']}, add_date: {i['createTime']}, user: 'user{n+1}'"
+
+
+
+
+
+
+#rating1 = all_post_comments.values('rating')[0]['rating']
+#rating2 = all_post_comments.values('rating')[1]['rating']
+# Post.objects.all().order_by('-rating').values('author', 'topic', 'rating', 'createTime') #метод сортировки
+
+
+12. Как с помощью тега можно сформировать url на страницу редактирования товара?
+
+{% url 'product_update' product.id %}
+# or
+{% url 'product_update' pk=product.id %}
+#product_update' указывается в кавычках как строка с названием пути, который зарегистрировали в urlpatterns.
+#product.id указывается без кавычек как переменная.
+#Название аргумента – pk – указывать не обязательно, но и не запрещается.
+
+
+13. pip freeze > requirements.txt
+
+
+14.path('accounts/', include('django.contrib.auth.urls')),
+Теперь нам стали доступны новые пути:
+accounts/login/ [name='login']
+accounts/logout/ [name='logout']
+accounts/password_change/ [name='password_change']
+accounts/password_change/done/ [name='password_change_done']
+accounts/password_reset/ [name='password_reset']
+accounts/password_reset/done/ [name='password_reset_done']
+accounts/reset/// [name='password_reset_confirm']accounts/reset/done/ [name='password_reset_complete']

@@ -1,0 +1,14 @@
+
+
+{% extends 'flatpages/default.html' %}
+
+{% load i18n %}
+
+{% block user_name %}
+'{{ user }}'
+{% endblock user_name %}
+
+{% block content %}
+<em><p style="width: 200px; text-align: left;"><a href="/news/" class="previous">&laquo; {% trans "News List" %}</a> </em>
+  <h1 class="text-center">{{ message }}</h1>
+{% endblock content %}

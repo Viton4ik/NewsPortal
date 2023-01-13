@@ -1,0 +1,4 @@
+# flake8 settings file
+[flake8]
+#ignore = E501, E303
+exclude = .git, __pycache__, ./manage.py, ./news/migrations

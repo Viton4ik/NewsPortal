@@ -1,0 +1,392 @@
+[
+{
+  "model": "news.post",
+  "pk": 2,
+  "fields": {
+    "contentType": "post",
+    "author": 1,
+    "createTime": "2022-10-16T14:55:02.568",
+    "topic": "Статья про спорт",
+    "content": "РУБЛЕВ ОБЫГРАЛ КОРДУ В ФИНАЛЕ ТЕННИСНОГО ТУРНИРА В ХИХОНЕ",
+    "rating": -1,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 5,
+  "fields": {
+    "contentType": "news",
+    "author": 1,
+    "createTime": "2022-10-24T21:28:11.909",
+    "topic": "Slovenia, Natural gas consumption in August was reduced by 14 % and in September by 11 %",
+    "content": "According to the Office for Macroeconomic Analysis and Development of Slovenia (UMAR), natural gas consumption in August was reduced by 14 % and in September by 11 % compared to the average consumption in the past five years.\r\n\r\nIt is expected that gas consumption in October will be even lower, while UMAR connects the reduction with the increase in gas prices due to the energy crisis, with the reduction of consumption primarily in the industry. It is recalled that the EU mandated that, from 1 August of this year until 31 March 2023, member states reduce gas consumption by 15 % compared to the five-year average, and estimates that Slovenia has already achieved savings of 14.8 %.\r\n\r\nUMAR also states that electricity consumption in Slovenia last month was 4.4 % lower than in September of last year, and that the main reason is the reduction of production in some energy- intensive companies due to high electricity prices. It is specified that industry in Slovenia reduced electricity consumption by 5.1 %, while households saved 3.9 % of electricity in September .\r\n\r\nEstimates of the economy’s results by the end of the year were further worsened in September, with worse export expectations, as most surveyed companies expect a drop in production by the end of the year, UMAR announced.",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 6,
+  "fields": {
+    "contentType": "news",
+    "author": 1,
+    "createTime": "2022-10-24T21:30:21.446",
+    "topic": "На шахте под Луганском вспыхнул большой пожар",
+    "content": "Telegram-каналы сообщают о сильном взрыве на одном из промышленных объектов ЛНР. Предположительно, в окрестностях Луганска горит шахта в Юбилейном. Фото прислали подписчики.\r\n\r\nБыл ли нанесен по этому объекту удар со стороны украинских формирований, не уточняется.\r\n\r\nРанее сообщалось, что в ЛНР на участке Сватово–Кременная российские инженерные войска устанавливают танковые заграждения, чтобы бронетехника противника не смогла преодолеть оборонительный рубеж.",
+    "rating": -3,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 7,
+  "fields": {
+    "contentType": "post",
+    "author": 1,
+    "createTime": "2022-10-24T21:31:16.003",
+    "topic": "«Ъ»: сеть KFC в России продадут местному бизнесу и переименуют в Rostic’s",
+    "content": "оссийская сеть KFC будет продана российскому владельцу бизнеса, сообщает «Коммерсантъ».\r\n\r\nПо данным газеты, американский холдинг Yum! Brands начал процесс передачи российского бизнеса местному партнеру, речь идет о ресторанах KFC и мастер-франшизе бренда. Покупателем актива оценочной стоимостью 1,3 млрд руб. стали структуры ижевского франчайзи сети ГК «Фуд-сервис» Константина Котова и Андрея Осколкова.\r\n\r\nВсего в России действует около 1 тыс. ресторанов KFC, из них российская структура Yum! Brands управляет 70 заведениями, остальные работают по франшизе. По данным «Ъ», новый владелец должен будет ребрендировать все заведения в Rostic's. При этом опрошенные изданием эксперты допускают, что не все франчайзи захотят работать под новым брендом.\r\n\r\nРанее американская компания Yum! Brands, которая владеет KFC и Pizza Hut, заявила о ребрендинге сетей.\r\n\r\nОтмечается, что права на сеть ресторанов Pizza Hut в России уже переданы местному бизнесу, аналогичная работа идет в отношении сети фастфуда KFC.\r\n\r\nТакже сообщается, что заведения KFC и Pizza Hut после ребрендинга не смогут работать под вывесками названных брендов.\r\n\r\n5 июля компания Yum Brands Inc сообщала, что ведет переговоры о продаже российских ресторанов KFC местному оператору, а затем полностью покинет российский рынок.",
+    "rating": 1,
+    "editTime": "2022-11-10T23:08:44.972"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 32,
+  "fields": {
+    "contentType": "post",
+    "author": 1,
+    "createTime": "2022-10-31T19:57:06.934",
+    "topic": "Курс по библиотеке Tkinter языка Python",
+    "content": "Что такое Tkinter?\r\nTkinter (от англ. tk interface) - это графическая библиотека, позволяющая создавать программы с оконным интерфейсом. Эта библиотека является интерфейсом к популярному языку программирования и инструменту создания графических приложений tcl/tk. Tkinter, как и tcl/tk, является кроссплатформенной библиотекой и может быть использована в большинстве распространённых операционных систем (Windows, Linux, Mac OS X и др.).\r\n\r\nТак как Tkinter является достаточно прозрачным интерфейсом к tcl/tk, то основным источником информации для неё являются man-страницы tcl/tk. Эти страницы имеются в любой Unix-системе (в разделе n или 3tk). Также они доступны онлайн на сайте http://tcl.tk. Основные:",
+    "rating": 0,
+    "editTime": "2022-11-20T22:58:05.661"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 43,
+  "fields": {
+    "contentType": "news",
+    "author": 1,
+    "createTime": "2022-10-31T23:00:24.067",
+    "topic": "testrrr",
+    "content": "tesrrrrr",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 55,
+  "fields": {
+    "contentType": "news",
+    "author": 1,
+    "createTime": "2022-11-10T21:29:53.164",
+    "topic": "dvvdvdvdv",
+    "content": "ddvadvavdadvddvddv",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 57,
+  "fields": {
+    "contentType": "post",
+    "author": 1,
+    "createTime": "2022-11-10T21:35:40.592",
+    "topic": "Создание и хостинг телеграм бота. От А до Я",
+    "content": "Привет, хабрчане! Какой бы заезженной не была тема создания телеграм бота на python3, я не нашёл инструкций, где показан путь от первой строчки кода до деплоинга бота (по крайней мере все методы, что я видел, немного устарели). В этой статье я хочу показать процесс создания бота от написания BotFather-у до деплоинга бота на Heroku.\r\n\r\nСтатья получилась длинной, советую пробежаться глазами по содержанию и кликнуть по интересующему вас пункту.\r\n\r\nP.S. Пишите если нужна статья по созданию более сложного бота, т.е. с вебхуками, БД с настройками юзеров и т.д.",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 60,
+  "fields": {
+    "contentType": "post",
+    "author": 8,
+    "createTime": "2022-11-10T21:58:51.350",
+    "topic": "10 лучших видеокурсов для изучения Linux",
+    "content": "Мы собрали для вас 10 лучших видеокурсов, изучение которых поможет вам начать работу с Linux и разобраться в особенностях данной системы.",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 61,
+  "fields": {
+    "contentType": "post",
+    "author": 8,
+    "createTime": "2022-11-10T21:59:30.509",
+    "topic": "10 лучших видеокурсов для изучения Linux",
+    "content": "Мы собрали для вас 10 лучших видеокурсов, изучение которых поможет вам начать работу с Linux и разобраться в особенностях данной системы.",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 73,
+  "fields": {
+    "contentType": "post",
+    "author": 8,
+    "createTime": "2022-11-13T14:19:42.057",
+    "topic": "В Антарктиде начал работу российский аэродром для транспортных самолетов",
+    "content": "Cанкт-Петербург, 13 ноя - ИА Neftegaz.RU. Специалисты Российской антарктической экспедиции (РАЭ) совместно с Арктическим и антарктическим научно-исследовательским институтом (ААНИИ) и компанией Запсибгазпром ввели в эксплуатацию новый снежно-ледовый аэродром для транспортных самолетов.\r\nОб этом сообщил директор ААНИИ А. Макаров.\r\n\r\nАэродром построили на станции Прогресс в Антарктиде.\r\n\r\nНовая взлетно-посадочная полоса (ВВП) позволит ученым и специалистам начинать сезонные работы раньше.\r\n\r\nРечь в т.ч. о создании нового зимовочного комплекса станции Восток.\r\n\r\nПервый самолет - Ил-76ТД-90ВД - успешно приземлился на новом аэродроме 7 ноября.\r\n\r\nОн доставил из Кейптауна 82 пассажира и 6,6 т грузов.\r\n\r\nПассажиры самолета - члены 68-й Российской антарктической экспедиции и специалисты Запсибгазпрома.\r\n\r\nРанее на станции Прогресс работала только ВВП для малой авиации, большие же грузы доставить было невозможно.\r\n\r\nНа текущий сезон на новой ВВП запланировано прибытие еще 4х рейсов, которые доставят на станцию строителей и грузы для строительства зимовочного комплекса станции Восток.",
+    "rating": 0,
+    "editTime": "2022-11-13T15:35:15.852"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 78,
+  "fields": {
+    "contentType": "post",
+    "author": 8,
+    "createTime": "2022-11-14T21:55:14.243",
+    "topic": "Uniper partners with NewMed Energy on LNG and hydrogen to minimise energy crisis",
+    "content": "Moscow, November 10 - Neftegaz.RU. According to the MoU, the parties will look into the supply of natural gas from Israel to Germany in the immediate term using existing production and transmission infrastructure in line with the availability of the transmission pipeline between Israel and Egypt, where the natural gas will be delivered to LNG facilities, and from there to Germany.\r\n\r\nIn addition, according to the MoU, the two sides will investigate the feasibility of LNG deliveries from the Leviathan reservoir to Uniper, which will require expansion of the existing Leviathan infrastructure (Phase 1B) as well as liquefaction of the gas at one of the existing facilities in Egypt or at a new-build independent floating liquefaction facility in Israel.\r\n\r\nYossi Abu, CEO of NewMed Energy:\r\nFor the foreseeable future, natural gas will be the most significant energy source in the world.\r\nNewMed Energy is continuing to promote its international activity.\r\nLeviathan is an energy anchor in the Middle East, supplying energy to Israel and other countries in the region, while also being able to help in the energy crisis in Europe.\r\nIn line with NewMed Energy’s strategic plan according to which the partnership is aimed at promoting green energy, the MoU also includes potential collaboration in the field of blue hydrogen and green hydrogen and its transportation from Israel to Europe.\r\n\r\nNiek den Hollander, CCO of Uniper:\r\nThis collaboration with NewMed Energy fits our strategy of diversifying our gas supply sources and paving the way to a decarbonized world.\r\nSourcing natural gas from offshore Israel has the potential to increase security of supply for Germany.",
+    "rating": 0,
+    "editTime": "2022-11-14T23:00:27.588"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 80,
+  "fields": {
+    "contentType": "post",
+    "author": 8,
+    "createTime": "2022-11-14T22:06:42.354",
+    "topic": "В Венгрии создают министерство энергетики",
+    "content": "Москва, 14 ноя - ИА Neftegaz.RU. Правительство Венгрии приняло решение создать министерство энергетики в связи с необходимостью обеспечить энергетическую безопасность страны.\r\n\r\nОб этом сообщил глава канцелярии премьер-министра Г. Гуйяш.\r\n\r\nТезисы Г. Гуйяша:\r\nСитуация на Украине и санкции Евросоюза против России сделали энергетическую безопасность и цены на энергоносители самыми важными вопросами в Венгрии и Европе;\r\nПоэтому правительство проводит структурные изменения и создает независимое министерство энергетики.\r\nПроблемами энергетики в Венгрии до сих пор занималось министерство технологий и промышленности, которое возглавлял Л. Палькович, а вопросы международного энергетического сотрудничества находились в ведении министра иностранных дел и внешнеэкономических связей П. Сийярто.\r\n\r\nИздание Index сообщило со ссылкой на свои источники, что предложение о создании в стране нового ведомства выдвинул министр экономического развития М. Надь, а премьер-министр Венгрии В. Орбан его поддержал и утвердил это решение, что вызвало разногласия в правительстве и привело к отставке министра технологий и промышленности Л. Пальковича.\r\n\r\nС 1 декабря 2022 г. новое министерство энергетики должен возглавить экономист Ч. Лантош, работавший ранее в руководстве ряда финансовых и промышленных компаний, в том числе заместителем главы крупнейшего венгерского банка OTP.\r\n\r\n\r\nВ июле Венгрия объявила чрезвычайное положение в области энергетики и приняло план действий из 7 пунктов:\r\n\r\nувеличение внутренней добычи газа с 1,5 млрд м3/год до 2 млрд м3/год,\r\nправительство Венгрии уполномочило министра иностранных дел и внешнеэкономических связей П. Сийярто приобрести дополнительные объемы газа. П. Сийярто сообщил, что Венгрия уже начала переговоры о закупке 700 млн м3 газа сверх существующих долгосрочных контрактов, подземные хранилища газа (ПХГ) в Венгрии заполнены на 44%, что позволит обеспечить газом страну примерно на 3 месяца,\r\nправительство Венгрии приказывает запретить экспорт энергоносителей и дров,\r\nдо конца 2022 г. правительство значительно увеличит внутреннее производство бурого угля,\r\nэнергоблоки угольной электростанции Матра должны быть перезапущены как можно скорее, чтобы обеспечить внутреннее энергоснабжение,\r\nправительство инициирует продление срока эксплуатации АЭС Пакш.\r\nсниженные цены на газ будут действовать только до уровня потребления среднего венгерского домохозяйства, те, кто потребляет больше среднего, будут платить излишки по рыночной цене.\r\nНапомним, что Венгрия потребляет порядка 10 млрд м3/год газа, 85% всего потребляемого в Венгрии газа поступает из России.\r\nП. Сийярто 13 июля 2022 г. заявил, что зависимость Венгрии от поставок российского газа делает невозможным решение поддержать санкции ЕС против Газпрома и Газпромбанка.\r\nРанее Венгрия активно выступала против санкций ЕС на поставки российской трубопроводной нефти, от которых Венгрия зависит на 64%.\r\nВ итоге 6й пакет санкций ЕС был принят без ограничений на поставки нефти по магистральному нефтепроводу (МНП) Дружба, отложенный запрет относится только к морским поставкам российской нефти и нефтепродуктов.",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 83,
+  "fields": {
+    "contentType": "post",
+    "author": 8,
+    "createTime": "2022-11-14T22:09:44.615",
+    "topic": "В Венгрии создают министерство энергетики",
+    "content": "Москва, 14 ноя - ИА Neftegaz.RU. Правительство Венгрии приняло решение создать министерство энергетики в связи с необходимостью обеспечить энергетическую безопасность страны.\r\n\r\nОб этом сообщил глава канцелярии премьер-министра Г. Гуйяш.\r\n\r\nТезисы Г. Гуйяша:\r\nСитуация на Украине и санкции Евросоюза против России сделали энергетическую безопасность и цены на энергоносители самыми важными вопросами в Венгрии и Европе;\r\nПоэтому правительство проводит структурные изменения и создает независимое министерство энергетики.\r\nПроблемами энергетики в Венгрии до сих пор занималось министерство технологий и промышленности, которое возглавлял Л. Палькович, а вопросы международного энергетического сотрудничества находились в ведении министра иностранных дел и внешнеэкономических связей П. Сийярто.\r\n\r\nИздание Index сообщило со ссылкой на свои источники, что предложение о создании в стране нового ведомства выдвинул министр экономического развития М. Надь, а премьер-министр Венгрии В. Орбан его поддержал и утвердил это решение, что вызвало разногласия в правительстве и привело к отставке министра технологий и промышленности Л. Пальковича.\r\n\r\nС 1 декабря 2022 г. новое министерство энергетики должен возглавить экономист Ч. Лантош, работавший ранее в руководстве ряда финансовых и промышленных компаний, в том числе заместителем главы крупнейшего венгерского банка OTP.\r\n\r\n\r\nВ июле Венгрия объявила чрезвычайное положение в области энергетики и приняло план действий из 7 пунктов:\r\n\r\nувеличение внутренней добычи газа с 1,5 млрд м3/год до 2 млрд м3/год,\r\nправительство Венгрии уполномочило министра иностранных дел и внешнеэкономических связей П. Сийярто приобрести дополнительные объемы газа. П. Сийярто сообщил, что Венгрия уже начала переговоры о закупке 700 млн м3 газа сверх существующих долгосрочных контрактов, подземные хранилища газа (ПХГ) в Венгрии заполнены на 44%, что позволит обеспечить газом страну примерно на 3 месяца,\r\nправительство Венгрии приказывает запретить экспорт энергоносителей и дров,\r\nдо конца 2022 г. правительство значительно увеличит внутреннее производство бурого угля,\r\nэнергоблоки угольной электростанции Матра должны быть перезапущены как можно скорее, чтобы обеспечить внутреннее энергоснабжение,\r\nправительство инициирует продление срока эксплуатации АЭС Пакш.\r\nсниженные цены на газ будут действовать только до уровня потребления среднего венгерского домохозяйства, те, кто потребляет больше среднего, будут платить излишки по рыночной цене.\r\nНапомним, что Венгрия потребляет порядка 10 млрд м3/год газа, 85% всего потребляемого в Венгрии газа поступает из России.\r\nП. Сийярто 13 июля 2022 г. заявил, что зависимость Венгрии от поставок российского газа делает невозможным решение поддержать санкции ЕС против Газпрома и Газпромбанка.\r\nРанее Венгрия активно выступала против санкций ЕС на поставки российской трубопроводной нефти, от которых Венгрия зависит на 64%.\r\nВ итоге 6й пакет санкций ЕС был принят без ограничений на поставки нефти по магистральному нефтепроводу (МНП) Дружба, отложенный запрет относится только к морским поставкам российской нефти и нефтепродуктов.",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 132,
+  "fields": {
+    "contentType": "news",
+    "author": 15,
+    "createTime": "2022-11-19T19:29:49.462",
+    "topic": "Currency Exchange API Documentation",
+    "content": "Live currency and foreign exchange rates by specifying source and destination quotes and optionally amount to calculate. Support vast amount of quotes around the world.",
+    "rating": 0,
+    "editTime": "2022-11-20T22:49:51.447"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 134,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-20T12:10:10.673",
+    "topic": "На Зашуланском месторождении начали строить горный участок",
+    "content": "Чита, 20 ноя - ИА Neftegaz.RU. На Зашуланском месторождении в Красночикойском районе Забайкальского края началось строительства горного участка по добыче каменного угля.\r\nОб этом сообщила компания Разрезуголь (СП En+ и китайской Shenhua).\r\n\r\nУже почти завершилось обустройство очистных сооружений, возведены насыпи земляного полотна дороги на участке горных работ.\r\n\r\nТакже на стадии проектирования находится ЛЭП, которая будет обеспечивать участок электроэнергией.\r\n\r\nВ апреле 2021 г. год было подписано соглашения с Россети Сибирь, компания построит 93 км ЛЭП 110 кВ.\r\nНа проектную мощность по добыче угля (5 млн т в год) предприятие сможет выйти примерно через 4 года.\r\n\r\nВ рамках проекта также запланировано строительство ж/д станции Зашулан-Угольная в с. Гыршелун в Хилокском районе.\r\n\r\nПосле выхода на производственную мощность предприятие создаст 1,8 тыс. новых рабочих мест.\r\n\r\nДля работников построят административно-бытовые здания и сооружения, медицинские и дошкольные учреждения.",
+    "rating": 0,
+    "editTime": "2022-11-20T22:59:58.596"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 135,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-20T12:21:44.312",
+    "topic": "Region: The first regional electricity exchange connects Serbia and Slovenia",
+    "content": "The newly established Alpine-Adriatic-Danube Electricity Exchange (ADEX) will offer services in Slovenia and Serbia. The Public Agency of the Republic of Slovenia for the Protection of Market Competition made a decision in which it does not oppose the reported establishment of the joint company of the European Electricity Exchange EPEX SPOT and the Slovenian and Serbian operator of the transmission network ELES and Elektromreža Srbije (EMS), as well as the acquisition of joint control of the companies EPEX, ELES and EMS over the Slovenian stock exchange BSP Sothpool. According to the agency’s assessment, the concentration is in accordance with the rules of market competition.\r\n\r\nThis gave the green light for the establishment of the first regional electricity exchange for Central and Southeastern Europe. In April, the European electricity exchange EPEX SPOT, the Slovenian ELES and the Serbian EMS announced a joint commitment to establish the first regional electricity exchange in the region. \r\n\r\nADEX will make trade easier\r\nThe newly established Alpine-Adriatic-Danube Electricity Exchange (ADEX) will offer coordinated one-stop services for electricity spot trading in Slovenia and Serbia and other countries in the Central and South Eastern Europe (CSEE) region. The founders will share ADEX shares equally. The contract also provides for the merger of the Slovenian stock exchange BSP Sothpool and the Serbian electricity market organizer (SEEPEX).\r\n\r\nEPEX SPOT and the operators of the transmission network system ELES and EMS will be shareholders of the newly established electricity exchange ADEX with headquarters in Ljubljana and main permanent offices in Ljubljana and Belgrade. Just to remind, Slovenian and Serbian network operators together with EPEX SPOT announced on April 4 this year that they will establish a new electricity exchange called ADEX.\r\n\r\nADEX will offer best-in-class trading and clearing solutions to the CSEE community and help build liquidity in these extraordinary circumstances, Ralf Danielski, CEO of EPEX SPOT, said on the occasion. He expects to accelerate the much-needed implementation of market coupling in this region in order to complete the European integration of the spot market.\r\n\r\nWe decided to cooperate with SEEPEX and its shareholders EMS and EPEX SPOT because we share the same vision of a strong regional electricity exchange that encourages further market integration in the region, BSP officials said. Serbia is connected to Croatia and Italy, so the flows will go to Serbia, instead of along the Serbia-Austria-Hungary border, traders estimated.",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 137,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-20T12:31:16.960",
+    "topic": "Иногда требуется какой-то скрипт или программу запускать как системный сервис. Это можно легко провернуть, если в вашем дистрибу",
+    "content": "Иногда требуется какой-то скрипт или программу запускать как системный сервис. Это можно легко провернуть, если в вашем дистрибутиве используется система инициализации и управления демонами — systemd.\r\n\r\nДля примера, я создам простейший python-скрипт который будет слушать 9988 порт и добавлю его в автозагрузку при старте операционной системы.\r\nИсточник: https://mirivlad.ru/kak-ustanovit-v-avtozapusk-python-skript-ispolzuya-systemd",
+    "rating": 0,
+    "editTime": "2022-11-20T22:29:00.228"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 144,
+  "fields": {
+    "contentType": "post",
+    "author": 1,
+    "createTime": "2022-11-20T17:02:18.286",
+    "topic": "10 лучших видеокурсов для изучения Linux",
+    "content": "The MON Software Series\r\nEmerson’s Rosemount gas chromatographs come with MON software, which gives operators the ability to easily configure, operate and manage the analyzer locally or remotely and provides greater insight into your process. Among the many features of MON, you can communicate across the enterprise network, securely store critical data, and generate detailed reports such as:\r\n\r\nCurrent and archived chromatographs\r\nAlarm history\r\nEvent logs\r\nMaintenance logs",
+    "rating": 0,
+    "editTime": "2022-11-20T22:25:22.939"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 145,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-20T17:08:52.818",
+    "topic": "Region: December futures in Hungary and Romania increased to 322 euros per MWh and 298 euros per MWh",
+    "content": "Hydropower production in the Balkans continued to fall in the 43rd and 44th weeks. This trend is led by lower flows of rivers and reservoirs in Romania, ENTSO-E hydrological reports and data from November 8 showed.\r\n\r\nHydro production in Romania, Serbia, Bulgaria, Slovakia, Slovenia, Croatia and BiH fell to 550 GWh in the 44th week, which is 14% less compared to the period two weeks ago and 27% less than the peak recorded at the beginning of October.\r\n\r\nProduction in Romania fell by 26% during this period, with reduced flow and reservoir levels. A somewhat milder decline in hydropower production was recorded in Serbia, Bulgaria and Bosnia and Herzegovina, while in Croatia and Slovenia the contribution of hydropower plants is slightly increasing.\r\n\r\nHydropower reserves across the region continued to decline, by nearly 5% over the past two weeks, to a seven-month low of 4.1 TWh at the end of the 44th week.\r\n\r\nSpot electricity prices across the region continued to fall unevenly in late October and early November, following gas prices and relatively modest demand. From around €190/MWh in mid-October, the day-ahead baseload price briefly fell below €140/MWh, before rising to €182/MWh by the end of week 44 in both Hungary and Romania.\r\n\r\nThe month-ahead price for base load has increased by around 10 euros per MWh in Hungary and Romania, to 322 euros per MWh and 298 euros per MWh for December contracts.\r\n\r\nOn the other hand, prices for the next quarter fell by over 30 euros per MWh in both countries, to 421 euros per MWh and 385 euros per MWh.\r\n\r\nA further slight decline in hydro production is expected in week 45, as river levels are forecast to fall in Slovakia and Serbia, while Romania and Bulgaria are expected to remain largely unchanged.\r\n\r\nRiver levels across the region remain well below multi-year averages for this time of year.\r\n\r\nHydro production on river courses could also fall in week 46, given that precipitation in the Danube basin is forecast to be relatively modest in week 45.",
+    "rating": 0,
+    "editTime": "2022-11-20T22:14:20.761"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 146,
+  "fields": {
+    "contentType": "post",
+    "author": 9,
+    "createTime": "2022-11-20T21:21:20.018",
+    "topic": "Serbia, Rio Tinto’s saga offers a lesson in critical minerals",
+    "content": "The failure of the Jadar Project in Serbia should be viewed as an opportunity for all role-players to recalibrate their processes in line with ESG principles\r\n\r\nThe northern hemisphere’s summer of 2022 will be remembered as one of the hottest in recorded history. For example, Nasa reported that June was one of the hottest Junes on record. The UK, in turn, experienced record temperatures in July.\r\n\r\nOn May 14, the city of Jacobabad, Pakistan, became the hottest city on Earth, when temperatures peaked at 51ºC. Contemporaneously other parts of the world suffered devastating climate change-related fires (such as those that blazed across France) or floods (including the August 8 large-scale floods in Seoul).\r\n\r\nThese events provide an unfortunate prelude to the Sharm el-Sheikh Climate Change Conference scheduled for November (better known as COP27), which is now less than three months away. While it remains critical for governments across the world to remain committed to the undertakings provided under the Paris Agreement, words without actions are of little value to those who are being (or will soon be) affected by increasingly severe weather events.\r\n\r\nIt should therefore come as no surprise that the demand for clean energy solutions has significantly increased. The sale of electric vehicles is an important example. According to EV-Volumes data, more than 900,000 new passenger plug-in electric cars were registered in June 2022. This represents a 54% increase year on year. If the trend continues into the second half of the year it could lead to more than 1-million electric cars being sold each month and more than 10-million over the course of the next year.\r\nThe single most important impediment to this growth trajectory, according to a July 2022 report by the International Energy Agency (IEA), is the supply of critical minerals and metals used in the manufacture of batteries. According to the IEA, battery and minerals supply chains will have to expand tenfold to meet government electric vehicle (EV) ambitions.\r\n\r\nFollowing the increased demand for battery metals during the pandemic the prices of raw materials such as cobalt, lithium and nickel surged. In May lithium prices were more than seven times higher than in early 2021 owing to unprecedented battery demand and a lack of sufficient investment in new supply capacity.\r\n\r\nThe demand for key minerals such as lithium will only increase as the global community continues to race towards net zero by 2050. Whether or not we will succeed depends on access to the required minerals.\r\n\r\nControversial Jadar Project lithium mine\r\nOn April 3 Aleksandar Vučić was re-elected for a second term as president of Serbia, with the coalition formed around his party, SNS, winning the most seats in the National Assembly, albeit falling short of an outright majority. Vučić’s re-election followed the widely publicised January 20 cancellation of what became known as the controversial Jadar Project, the proposed development by Rio Tinto of a $2.4bn lithium mine in Serbia.\r\n\r\nWhile the government’s actions raised new questions surrounding the future of the lithium mining industry in Serbia, in the light of the IEA’s recent report it also poses existential questions for global supply chains.\r\n\r\nThe cancellation of the Jadar Project followed months of countrywide protests over the potential environmental impact of the project. The affair gave rise to intense speculation over the introduction of a possible blanket ban on lithium mining in Serbia; president Vučić’s previous administration had promised to defer such a decision until after the election.\r\n\r\nThe introduction of such a ban would prove to be a mistake. The mineral deposits at the heart of the Jadar Project are located underneath a river system in an agricultural area that is prone to flooding, giving rise to a material environmental risk. The Serbian government did not have a direct stake in the proposed lithium mine and so could not justify the project on the basis that it would fill public coffers. The government consequently did not believe it could do what governments elsewhere do when they have a fair deal: politically and publicly defend it.\r\n\r\nThe Serbian government had hoped to use the project as a basis to attract further investment across the batteries sector, including the manufacturing of batteries and battery-reliant products, such as EVs. However, the government was unable to present to the public concrete assurances that the project would lead to the creation of more than a small number of relatively low-skill mining jobs. As a result there was a widespread sentiment among the Serbian public that the main beneficiaries of the Jadar Project would be European carmakers and consumers, who would benefit from Serbia’s cheaper labour costs at the expense of the Serbian environment.\r\n\r\nBy December 2021 thousands of people across the country had began protesting, and the matter quickly became the leading electoral issue in the build-up to the general election on April 3 2022. As a result, on January 20 the government announced that it was revoking all of Rio Tinto’s permits relating to the project, with the promise that it would consider introducing an outright ban on lithium mining following the general election.\r\n\r\nAlthough the Jadar Project was ostensibly cancelled over concerns regarding the potential of environmental damage, it is important to note that Rio Tinto had complied with all applicable local laws. The project was cancelled prior to the completion of a final environmental impact assessment, as mandated by Serbian law, meaning the public furore over the potential environmental damage was not supported by a comprehensive scientific assessment.\r\n\r\nThe failure of the Jadar Project is therefore an important example of a mining project being cancelled owing to reaching a critical level of opposition from the public, also referred to as a loss of the “societal licence” to operate that may not have existed in the first place.\r\n\r\nManaging the ‘S’ in ESG\r\nThe episode illustrates the reality that public acceptance is the currency on which mining companies trade. Such acceptance of a mining company can make or break a project, including one with strong central government backing. Accordingly, mining companies must be sensitive to the fact that globally the sector is often not trusted by communities for a variety of reasons (often outside the control of the companies themselves).\r\n\r\nCompanies must become better at convincing communities, authorities and the public that they can be trusted because they have a well developed understanding of the social risk factors that are most relevant to each individual project, rather than adopting an unchanging, one-size-fits all approach. The lack of a social impact assessment in Jadar (with an integrated human rights impact assessment), in line with industry best practice (though not required by Serbian law) proved fatal in this regard.\r\n\r\nAt the same time, the failure of the Jadar Project cannot rest on Rio alone. Jadar’s host government partner, the previous Vučić administration, expended political capital in promoting and advocating for the project until the affair became a serious electoral risk. The public was not persuaded by arguments that the project had been conducted in accordance with the applicable regulatory regime, largely because the regulatory regime itself simply was not aligned with the public’s evolving expectations. Governments, as well as mining companies, should be mindful of the fact that public-interest projects are always subject to scrutiny under the evolving criteria of societal expectations.\r\n\r\nThis is not in itself a new concept; it is simply the case that the public expectations on mining companies are increasingly becoming much more demanding than the legal requirements imposed by national regulatory regimes. The episode should be seen as a timely reminder for national regulators and mining companies should recalibrate their processes to be founded in environmental, social and governance (ESG) principles. Moreover, if governments and national regulators wish to remain the final decisionmakers over which mining projects are deemed to be in the public interest, they must ensure that the legal and regulatory regimes in place reflect the evolving expectations of the public in each stage of the development and operation of a mine such as Jadar.\r\n\r\nThe role of international financial institutions should likewise not be overlooked in this regard. Although they did not feature prominently in the Jadar Project, similar projects in developing countries are often financed (at least in part) by large international financial institutions such as the World Bank’s International Finance Corporation or the US Development Finance Corporation. In view of the importance placed by stakeholders on the reputation of mining companies, the backing of those international financial institutions is often used to buttress the credentials of sensitive projects.\r\n\r\nWhere this is the case the relevant international financial institutions are well placed to guide, through their well-developed performance standards, both mining companies and governments in navigating the challenges associated with obtaining and maintaining a project’s societal licence. This may include, where appropriate, making the availability of financing conditional on the relevant mining company satisfying certain ESG-linked criteria.\r\n\r\nHistory is the best teacher\r\nIt is clear that the failure of the Jadar Project has exposed a breakdown in public trust and fault lines between the expectations of mining companies, governments and the wider public. However, extractive resources which are associated with “green” industries, such as lithium, present a unique opportunity to combine economic development with the advancement of the transition to low-carbon energy sources. Despite the associated challenges, entirely foregoing the extraction of such resources would be a mistake which is likely to have worse environmental consequences in the long run.\r\n\r\nAccordingly, rather than resulting in a ban on lithium extraction, the failure of the Jadar Project should be viewed as an opportunity for investors, governments and international financial institutions to recalibrate their processes in line with ESG principles, to facilitate the sustainable growth of the mining sector. To achieve this a delicate balance must be struck between the ability of companies to turn a profit and the need to promote sustainable economic development and combat the effects of climate change in line with societal expectations and the concerns of the broader citizenry, Business Live writes.",
+    "rating": 0,
+    "editTime": "2022-11-20T22:08:05.330"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 147,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-20T21:34:18.922",
+    "topic": "Greece, Auction for incentives to energy-intensive industry in December",
+    "content": "The first auction to offer compensation to high and medium voltage industrial consumers for reduced electricity consumption is due to take place in December as part of Greece’s efforts to limit electricity demand by 5% during peak hours, as requested by the European Commission. commissions that all EU member states should fulfill.\r\n\r\nIndustrial consumers at high and medium voltage who submit the lowest offers for compensation at monthly auctions will be offered compensation for the energy consumed.\r\n\r\nSeparate auctions are planned for industrial consumers at high and medium voltage, Greek media reported.\r\n\r\nThe compensation amounts for successful bidders will be financed from the Energy Transition Fund.\r\n\r\nA revision of the law facilitating these auctions was recently passed by the Greek parliament. However, other legislative and regulatory issues have yet to be resolved before the auction takes place, which is expected to be as early as December.\r\n\r\nThe government in Athens has designated a period of three hours, from 18:00 to 21:00, including weekends, as the interval with the highest consumption of electricity in the country.\r\n\r\nSource: energypress.eu",
+    "rating": 0,
+    "editTime": "2022-11-20T22:06:08.077"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 152,
+  "fields": {
+    "contentType": "news",
+    "author": 8,
+    "createTime": "2022-11-20T21:57:58.946",
+    "topic": "Show your power and become an exhibitor of the industry highlight",
+    "content": "You would like to present your product range to the international power electronics industry and want to become part of the community? Here you can find important and useful information for your application as an exhibitor of the PCIM Europe 2023. We will be happy to answer any further questions you may have..",
+    "rating": 0,
+    "editTime": "2022-12-11T15:34:44.588"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 153,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-23T11:12:39.346",
+    "topic": "D7SMS API Documentation",
+    "content": "D7API Gateway lets you connect to the global messaging network through D7’s own connectivity.!c",
+    "rating": 0,
+    "editTime": "2022-12-11T14:53:01.567"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 154,
+  "fields": {
+    "contentType": "post",
+    "author": 1,
+    "createTime": "2022-11-23T11:17:48.636",
+    "topic": "ОБЛАЧНЫЕ VPS KVM",
+    "content": "Виртуализация KVM и 100% SSD RAID Хранилище. Все наши Виртуальные Серверы (VPS) имеют защиту от DDoS и Безлимитный Трафик. Россия, Молдова, Румыния..",
+    "rating": 0,
+    "editTime": "2022-12-11T13:38:28.219"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 155,
+  "fields": {
+    "contentType": "post",
+    "author": 20,
+    "createTime": "2022-11-23T11:28:28.932",
+    "topic": "ДЕЛАЕМ СОБСТВЕННЫЙ VPN ЗА 30 МИНУТ: ПОШАГОВАЯ ИНСТРУКЦИЯ ДЛЯ НОВИЧКОВ",
+    "content": "Содержание\r\nЧто для этого потребуется: 4 этапа\r\nЭтап №1. Аренда сервера (выбираем с оплатой криптовалютой)\r\nЭтап №2. Настройка сервера и подключение\r\nЭтап №3. Установка VPN\r\nЭтап №4. Конфигурация VPN\r\nПодключение к VPN",
+    "rating": 0,
+    "editTime": null
+  }
+},
+{
+  "model": "news.post",
+  "pk": 156,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-23T11:31:52.728",
+    "topic": "Разрешим переадресацию ESP-трафика:",
+    "content": "Настроим маскирование трафика, так как наш VPN-сервер, по сути, выступает как шлюз между Интернетом и VPN-клиентами:.",
+    "rating": 0,
+    "editTime": "2022-12-11T13:38:58.061"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 159,
+  "fields": {
+    "contentType": "post",
+    "author": 15,
+    "createTime": "2022-11-24T14:23:13.188",
+    "topic": "10 лучших видеокурсов для изучения Linux",
+    "content": "http://127.0.0.1:8000/news/",
+    "rating": 0,
+    "editTime": "2022-12-11T12:39:15.331"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 161,
+  "fields": {
+    "contentType": "post",
+    "author": 9,
+    "createTime": "2022-12-08T22:15:01.561",
+    "topic": "Verdande: Securing higher production on the Norne vessel, north norway",
+    "content": "Moscow, December 7 - Neftegaz.RU. Verdande will be put on stream in the fourth quarter of 2025. The subsea development secures important oil volumes to the Norne production vessel.\r\n.\r\nGeir Tungesvik, Equinor’s executive vice president for Projects, Drilling & Procurement said:\r\nVerdande will provide important local and regional ripple effects;\r\nIt will also help meet the energy demanded by European customers;\r\nBased on the ripple effect study and our own calculations Verdande will be a socio-economically profitable and economically viable project. Not least, it will contribute to increased energy efficiency for Norne.\r\nComprising the Cape Vulture and Alve North-East discoveries, Verdande is located in the Norwegian Sea at water depths of 350-380 metres, around 300 kilometres south-west of the city of Bodø in North Norway.\r\n\r\nThe discoveries were proven in 2017 and 2020 respectively and contain a total of 36.3 million barrels of recoverable oil equivalent.\r\n\r\nGrete Birgitte Haaland, senior vice president for exploration and production north in Equinor said:\r\nVerdande will provide good utilization of excess capacity on the Norne vessel, and its resources contributes to an economic extended lifespan beyond 2026;\r\nAccording to a ripple effect study carried out by Bodø Science Park the national employment effects of the Verdande development are calculated at close to 1300 full-time equivalents, distributed on three years in the development period from 2023 to 2025.",
+    "rating": 0,
+    "editTime": "2022-12-11T15:06:17.321"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 162,
+  "fields": {
+    "contentType": "post",
+    "author": 8,
+    "createTime": "2022-12-08T22:16:04.677",
+    "topic": "Узбекистан полностью прекратил экспорт газа",
+    "content": "Ташкент, 8 дек - ИА Neftegaz.RU. Узбекистан полностью прекратил экспорт своего газа в связи со  значительным ростом потребления топлива внутри страны из-за морозов.\r\nОб этом сообщил председатель правления Узтрансгаза Б. Нарматов.\r\n\r\nТезисы:\r\nвесь экспорт газа, в т.ч. в Китай, приостановлен на 100%, и этот объем направлен населению;\r\nтакая мера должна помочь удовлетворить потребности населения в топливе, что остается приоритетной задачей компании;\r\nУзбекистан сократил поставки газа в 2022 г. в 3 раза относительно объемов прошлого года;\r\nэто объясняется в т. ч. строительством в стране новых электростанций;\r\nэкономика развивается, соответственно, мы также пересчитываем объем экспорта и импорта газа.\r\n Ранее заместитель главы минэнерго страны Ш. Ходжаев сообщал, что Узбекистан практически прекратил экспорт природного газа и нарастил его закупки из-за повышенного спроса в морозы.\r\nПри этом ведомство прогнозировало, что по итогам 2022 г. объемы экспорта этого энергоресурса достигнут 3,3 млрд м3, большая часть из которых поступит в Китай и соседние государства Средней Азии.\r\n\r\nТакже 8 декабря министр энергетики Узбекистана Ж. Мирзамахмудов заявил, что Узбекистан не планирует закупать газ «через какой-то альянс или союз» и ведет переговоры о поставках газа и электроэнергии из соседних стран.\r\n\r\nУзбекистану сейчас крайне не хватает газа, и поэтому в стране проводятся плановые отключения электроэнергии.\r\nТак, в Ташкенте и областях Ферганской долины из-за наступивших холодов и возникшего в этой связи дефицита природного газа временно закрыли автомобильные газовые заправки (АГНКС).\r\nВ других регионах их деятельность ограничили.\r\n\r\nВ Узбекистане с 2018 г. начали вводить временные ограничения работы АГНКС для обеспечения стабильных поставок природного газа населению, больницам, школам, дошкольным учреждениям, а также крупным электростанциям.\r\nВ стране около 70% автомобильного транспорта может работать на более дешевом газомоторном топливе (ГМТ), поскольку в стране существует дефицит дизельного топлива и бензина.\r\n\r\nУзбекистан ставит перед собой серьезные задачи по восполнению ресурсной базы и росту добычи углеводородов.\r\nВ августе 2022 г. Азербайджан и Узбекистан договорились сотрудничать: в экспорте и импорте нефтегазовой и химической продукции, в нефтепереработке, также геолого-разведочной деятельности и добыче углеводородов.\r\nБолее того, Узбекнефтегаз изучает возможность импорта нефти из Казахстана по приемлемым ценам, в частности, рассматриваются варианты закупок у частных нефтедобывающих компаний.\r\nДля развития нефтехимической промышленности, Узбекистан поставил цель генерировать до 30% своей электроэнергии из чистых источников энергии к 2030 г.",
+    "rating": 0,
+    "editTime": "2022-12-11T15:29:58.788"
+  }
+}
+]

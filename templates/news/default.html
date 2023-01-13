@@ -1,0 +1,184 @@
+{% load i18n %}
+{% load tz %}
+{% load custom_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title1 %} {% endblock title1 %}</title>
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+       {% load static %}
+        <link href="{% static 'news/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+           <div class="container">
+               <a class="navbar-brand" href="/news/">{% trans "News Portal" %}</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse"
+                       data-target="#navbarResponsive"
+                       aria-controls="navbarResponsive" aria-expanded="false"
+                       aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarResponsive">
+                   <ul class="navbar-nav ml-auto">
+                       <li class="nav-item active">
+                           <a class="nav-link" href="/info/">{% trans "Home" %}
+                               <span class="sr-only">{% trans "(current)" %}</span>
+                           </a>
+                       </li>
+
+                       {% if request.user.is_authenticated %} {# or like that - % if perms.news %#}
+                       <li class="nav-item">
+                           <a class="nav-link" href="/accounts/logout">{% trans "Sign Out" %} ({% block user_name %}{% endblock user_name %})</a>
+                       </li>
+                       {%else%}
+                       <li class="nav-item">
+                           <a class="nav-link" href="/accounts/login">{% trans "Sign In (Unauthorised user)" %}</a>
+                       </li>
+                        {% endif %}
+                   </ul>
+               </div>
+
+                        <!-- time zone  -->          
+                        {% get_current_timezone as TIME_ZONE %}
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <label for="timezone"><span style="color: white;">{% trans "Time zone" %}:</label>
+                            <select name="timezone">
+                                <!-- using custom_tags -->
+                                {% time_zones_ as timezones %}
+                                {% for tz in timezones %}
+                                <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected {% endif %}>{{ tz }}</option>
+                                {% endfor %}
+                            </select>
+                            {% trans "Set" as set__ %} 
+                            <input type="submit" value="{{ set__ }}">
+                        </form>&nbsp; 
+
+                    <!--add option to chose the language-->
+                    <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
+                        <input type="hidden" name="next" value="{{ redirect_to }}">
+                    
+                            <select name="language" id="">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
+                                {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
+                                                 
+                                {% for language in languages %} <!-- Итерируясь по списку, выводим их название на языке пользователя и код -->
+                                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                        {{ language.name_local }} - {{ language.code }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            {% trans "Set" as set_ %}
+                        <input type="submit" value="{{ set_ }}">
+                    </form>
+
+           </div>
+        </nav>
+
+        <!-- Page content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <a href="/news/" class="previous">&laquo; {% trans "News List" %}</a>
+                            {% block topic %}
+                            {% endblock topic %}
+
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">{% trans "Posted on" %}
+                                {% block date %} {% endblock date %} by '{% block author %} {% endblock author %}'</div>
+
+                                <!-- edit time-->
+                                {% if content.editTime is not None %}
+                                    <div class="text-muted fst-italic mb-2">({% trans "last edition" %}: {% block edit_time %} {% endblock edit_time %})</div>
+                                {% endif %}
+
+                            <!-- Post categories-->
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">{% block type %} {% endblock type %}</a>
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!"><span style="color: #003366;">{% trans "Category" %}:</span> {% block categories %} {% endblock categories %}</a>
+
+
+                        </header>
+                        <!-- Preview image figure-->
+<!--                        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{% static 'news/news.jpg' %}" alt="..." /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            {% block content %}
+                            {% endblock content %}
+                            {% block comment %} {% endblock comment %}
+                            {% block commentUser %} {% endblock commentUser %}
+                            {% block add_comment %} {% endblock add_comment %}
+                            <hr>
+                            {% block delete %} {% endblock delete %}
+                       </section>
+
+                    </article>
+
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">{% trans "Search" %}</div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                <button class="btn btn-primary" id="button-search" type="button">{% trans "Go" %}!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">{% trans "Categories" %}</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">Web Design</a></li>
+                                        <li><a href="#!">HTML</a></li>
+                                        <li><a href="#!">Freebies</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">JavaScript</a></li>
+                                        <li><a href="#!">CSS</a></li>
+                                        <li><a href="#!">Tutorials</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Side widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">{% trans "Side Widget" %}</div>
+                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">{% trans "Copyright" %} &copy; {% trans "Django Website 2022" %} &nbsp; &nbsp; {{ current_time|timezone:TIME_ZONE }} &nbsp; {{TIME_ZONE}}</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

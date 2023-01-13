@@ -1,0 +1,115 @@
+{% extends 'flatpages/default.html' %}
+
+{% load i18n %}
+
+{% load custom_filters %}
+
+{% load custom_tags %}
+
+{% block user_name %}
+    '{{ user }}'
+{% endblock user_name %}
+
+{% block content %}
+    <table>
+        <tr>
+            <td><em><p style="width: 150px; text-align: left;"><a href="/news/" class="previous">&laquo; {% trans "News List" %}</a></p></em></td>
+            <td><h1><p style="width: 1100px;"><em>{% trans "Detailed search" %}:</em></h1></td>
+        </tr>
+    </table>
+
+<hr>
+    {# Добавляем форму, которая объединяет набор полей, которые будут отправляться в запросе #}
+   <form action="" method="get">
+       {# Переменная, которую мы передали через контекст, может сгенерировать нам форму с полями #}
+       {{ filterset.form.as_p }}
+       {# Добавим кнопку отправки данных формы #}
+
+       {% trans "Save" as Save %} 
+       <input type="submit" value="{{ Save }}" />
+   </form>
+<hr>
+   <form action="" method="get">
+       {# Button with an empty get-method to clean all filters #}
+       {% trans "Clean filters" as сlean_filters %} 
+       <input type="submit" value="{{ сlean_filters }}" />
+   </form>
+
+   <hr>
+   {% if news %}
+        <caption><em>{% trans "News found" %}: {{  news_number }}</em></caption>
+       <table style="height: 24px; "width="1300">
+
+        <tr style="background-color:{% cycle 'white' 'lightblue' %}">
+            <td style="width: 500px; text-align: center;"><strong> {% trans "Topic" %}</strong> </td>
+            <td style="width: 400px; text-align: center;"><strong> {% trans "Post" %}</strong> </td>
+            <td style="width: 300px; text-align: center;"><strong> {% trans "Category" %}</strong> </td>
+            <td style="width: 200px; text-align: center;"><strong> {% trans "Creating date" %} </strong></td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Type" %}</strong> </td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Author" %} </strong></td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Rating" %}</strong> </td>
+        </tr>
+
+           {% for news_ in news %}
+           <tr style="background-color:{% cycle 'lightblue' 'white' %}">
+            <td style="text-align: left;"> <a class="nav-link" href="/news/{{ news_.id }}"> {{ news_.topic|censor|forbidden|truncatewords:4 }} </a></td>
+            <td style="text-align: left;"><a class="nav-link" href="/news/{{ news_.id }}">{{ news_.content|censor|forbidden|truncatechars:20 }}</a></td>
+
+            <td>
+                {% for category in news_.postCategory.all %}
+                     <a href="{% url 'category_list' category.id %}">{{ category }}</a>
+                {% endfor %}
+
+            </td>
+            <td>{{ news_.createTime|date:'d M Y' }}</td>
+            <td>{{ news_.contentType }}</td>
+            <td>{{ news_.author }}</td>
+            <td>{{ news_.rating }}</td>
+        </tr>
+           {% endfor %}
+
+        </table>
+   {% else %}
+
+       <h2>{% trans "No news" %}</h2>
+   {% endif %}
+
+
+  {# Добавляем пагинацию на страницу #}
+
+    {# Добавляем "<" #}
+    {% if page_obj.has_previous %}
+
+       <a href="?{% url_replace page=page_obj.previous_page_number %}"><</a>
+
+    {% endif %}
+
+   {# Информация о предыдущих страницах #}
+   {% if page_obj.has_previous %}
+       <a href="?{% url_replace page=1 %}">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           ...
+           <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+
+   {# Информация о текущей странице #}
+   {{ page_obj.number }}
+
+   {# Информация о следующих страницах #}
+   {% if page_obj.has_next %}
+       <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           ...
+           <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+    {# Добавляем ">" #}
+    {% if page_obj.has_next %}
+
+       <a href="?{% url_replace page=page_obj.next_page_number %}">></a>
+
+    {% endif %}
+
+{% endblock content %}
+

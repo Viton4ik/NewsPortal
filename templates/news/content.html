@@ -1,0 +1,103 @@
+
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'news/default.html' %}
+
+{% load i18n %}
+
+{% load tz %}
+{% load custom_tags %}
+
+{% load custom_filters %}
+
+{% block user_name %}
+    '{{ user }}'
+{% endblock user_name %}
+
+{% block title1 %}
+    {% trans "news" %}
+{% endblock title1 %}
+
+{% load cache %}
+    {% cache 300 data %}
+
+        <!--topic-->
+        {% block topic %}
+            <h1 class="fw-bolder mb-1">{{ content.topic|censor|forbidden }}</h1>
+        {% endblock topic %}
+
+        <!--data-->
+        {% block date %}
+        {{ content.createTime.date }}
+        {{ content.createTime.time }}
+        {% endblock date %}
+
+        <!--author-->
+        {% block author %}
+        {{ content.author }}
+        {% endblock author %}
+
+        <!--contentType-->
+        {% block type %}
+        {{ content.contentType.title}}
+        {% endblock type %}
+
+        <!--Post category-->
+        {% block categories %}
+            {% for category in categories %}
+                   {{ category }}
+            {% endfor %}
+        {% endblock categories %}
+
+        <!--content-->
+        {% block content %}
+        <p></p>
+        <p>{{ content.content|censor|forbidden }}</p>
+        <hr>
+        {% endblock content %}
+
+    {% endcache %}
+
+<!--comments-->
+{% block comment %}
+<div class="fw-bold">{% trans "Comments" %}:</div>
+    {% for comment in comments %}
+        <p><em> - {{ comment.title }}</em></p>
+    {% endfor %}
+{% endblock comment %}
+
+<!--commentUser-->
+{% block commentUser %}
+    {% for comment_ in comments_ %}
+        <p><em> - {{ comment_ }}</em></p>
+    {% endfor %}
+{% endblock commentUser %}
+
+<!--delete post-->
+{% block delete %}
+    {# check if the user is an author or admin #}
+    {% if is_author or user.is_superuser %}
+        {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
+        {% if perms.news %} {# it can be more detailed - {% if perms.news.add/change/delete_post %} #}
+            <p>&nbsp;</p>
+            <a href="./{{ content.pk }}/delete/"><button class="mt-3 btn-primary" type="button"> {% trans "Delete Post" %}</button></a>
+            <a href="./{{ content.pk }}/edit/"><button class="mt-3 btn-primary" type="button"> {% trans "Edit Post" %}</button></a>
+        {% endif %}
+    {% endif %}
+{% endblock delete %}
+
+<!--edit_time post-->
+{% block edit_time %}
+    {% load cache %}
+        {% cache 300 edit_time %}
+            {{ content.editTime }}
+        {% endcache %}
+{% endblock edit_time %}
+
+<!--add comment-->
+{% block add_comment %}
+    {# check if user authenticated #}
+    {% if request.user.is_authenticated %}
+        <p>&nbsp;</p>
+        <a href="./{{ content.pk }}/comments/"><button class="mt-3 btn-primary" type="button"> {% trans "Add Comment" %}</button></a>
+    {% endif %}
+{% endblock add_comment %}

@@ -1,0 +1,302 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-12 16:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: fpages/admin.py:14
+msgid "Advanced options"
+msgstr "Детальные настройки"
+
+#: news/filters.py:19
+msgid "Topic:"
+msgstr "Тема:"
+
+#: news/filters.py:24
+msgid "Author:"
+msgstr "Автор:"
+
+#: news/filters.py:40
+msgid "Category:"
+msgstr "Категория:"
+
+#: news/filters.py:48
+msgid "Creation date:"
+msgstr "Дата создания:"
+
+#: news/forms.py:25 templates/news/category_list.html:45
+#: templates/news/news.html:56 templates/news/post_search.html:44
+msgid "Topic"
+msgstr "Тема"
+
+#: news/forms.py:26
+msgid "Content"
+msgstr "Cодержание"
+
+#: news/forms.py:27
+msgid "ContentType"
+msgstr "Тип контента"
+
+#: news/forms.py:28
+msgid "PostCategory"
+msgstr "Категория поста"
+
+#: templates/daily_post.html:7 templates/post_created_email.html:7
+msgid "Title"
+msgstr "Приветствуем, здесь вы найдете посты, добавленные за последнюю неделю"
+
+#: templates/daily_post.html:10
+msgid "Hello there! Here you can find new articles that have been added in the last week"
+msgstr "Приветствуем, здесь вы найдете посты, добавленные за последнюю неделю"
+
+#: templates/daily_post.html:12
+msgid "Your subscription is in the following categories"
+msgstr "Вы подписаны в следующих категориях"
+
+#: templates/flatpages/default.html:44 templates/news/default.html:23
+msgid "News Portal"
+msgstr "Новостной портал"
+
+#: templates/flatpages/default.html:54 templates/news/default.html:33
+msgid "Home"
+msgstr "Домой"
+
+#: templates/flatpages/default.html:55 templates/news/default.html:34
+msgid "(current)"
+msgstr "(текущий)"
+
+#: templates/flatpages/default.html:61 templates/news/default.html:40
+msgid "Sign Out"
+msgstr "Выйти"
+
+#: templates/flatpages/default.html:65 templates/news/default.html:44
+msgid "Sign In (Unauthorised user)"
+msgstr "Войти (Неавторизованный)"
+
+#: templates/flatpages/default.html:84 templates/flatpages/default.html:103
+#: templates/news/default.html:68 templates/news/default.html:87
+msgid "Set"
+msgstr "Применить"
+
+#: templates/flatpages/default.html:122 templates/flatpages/default.html:123
+#: templates/news/default.html:183
+msgid "Copyright"
+msgstr "Все права защищены"
+
+#: templates/flatpages/default.html:122 templates/flatpages/default.html:123
+#: templates/news/default.html:183
+msgid "Django Website 2022"
+msgstr "Django вебсайт 2022"
+
+#: templates/flatpages/info.html:6
+msgid "Information"
+msgstr "Информация"
+
+#: templates/flatpages/info.html:18
+msgid "Hello there!"
+msgstr "Приветствуем ваc на нашем сайте!"
+
+#: templates/news/author_create.html:12 templates/news/category_list.html:16
+#: templates/news/category_list.html:22 templates/news/default.html:103
+#: templates/news/news.html:15 templates/news/news.html:20
+#: templates/news/post_delete.html:12 templates/news/post_edit.html:11
+#: templates/news/post_search.html:16
+msgid "News List"
+msgstr "Доска новостей"
+
+#: templates/news/category_list.html:25
+msgid "Subscribe"
+msgstr "Подписаться"
+
+#: templates/news/category_list.html:29 templates/news/news.html:26
+msgid "Amount of news on the page"
+msgstr "Количество постов на странице"
+
+#: templates/news/category_list.html:30 templates/news/news.html:27
+msgid "Total amount of news"
+msgstr "Общее количество постов"
+
+#: templates/news/category_list.html:36 templates/news/news.html:47
+msgid "Add News"
+msgstr "Добавить пост"
+
+#: templates/news/category_list.html:37 templates/news/news.html:48
+msgid "Detailed Search"
+msgstr "Детальный поиск"
+
+#: templates/news/category_list.html:46 templates/news/news.html:57
+#: templates/news/post_delete.html:17 templates/news/post_search.html:45
+msgid "Post"
+msgstr "Пост"
+
+#: templates/news/category_list.html:47 templates/news/default.html:118
+#: templates/news/news.html:58 templates/news/post_search.html:46
+msgid "Category"
+msgstr "Категория"
+
+#: templates/news/category_list.html:48 templates/news/news.html:59
+#: templates/news/post_search.html:47
+msgid "Creating date"
+msgstr "Дата создания"
+
+#: templates/news/category_list.html:49 templates/news/news.html:60
+#: templates/news/post_search.html:48
+msgid "Type"
+msgstr "Тип"
+
+#: templates/news/category_list.html:50 templates/news/news.html:61
+#: templates/news/post_edit.html:19 templates/news/post_search.html:49
+msgid "Author"
+msgstr "Автор"
+
+#: templates/news/category_list.html:51 templates/news/news.html:62
+#: templates/news/post_search.html:50
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: templates/news/comments.html:14 templates/news/content.html:14
+msgid "news"
+msgstr "Новостей нет"
+
+#: templates/news/comments.html:23
+msgid "Put your comment here"
+msgstr "Оставьте свой комментарий здесь"
+
+#: templates/news/comments.html:24
+msgid "Your comment"
+msgstr "Добавить комментарий"
+
+#: templates/news/content.html:59
+msgid "Comments"
+msgstr "Комментарии"
+
+#: templates/news/content.html:80
+msgid "Delete Post"
+msgstr "Удалить пост"
+
+#: templates/news/content.html:81
+msgid "Edit Post"
+msgstr "Редактировать пост"
+
+#: templates/news/content.html:99
+msgid "Add Comment"
+msgstr "Добавить комментарий"
+
+#: templates/news/default.html:60
+#: templates/flatpages/default.html:76
+msgid "Time zone"
+msgstr "Часовой пояс"
+
+#: templates/news/default.html:108
+msgid "Posted on"
+msgstr "Размещено"
+
+#: templates/news/default.html:113
+msgid "last edition"
+msgstr "Изменено"
+
+#: templates/news/default.html:143
+msgid "Search"
+msgstr "Поиск"
+
+#: templates/news/default.html:147
+msgid "Go"
+msgstr "Поиск"
+
+#: templates/news/default.html:153
+msgid "Categories"
+msgstr "Категория"
+
+#: templates/news/default.html:175
+msgid "Side Widget"
+msgstr "Виджет"
+
+#: templates/news/news.html:85 templates/news/post_search.html:74
+msgid "No news"
+msgstr "Новостей нет"
+
+#: templates/news/post_delete.html:11
+msgid "Post delete"
+msgstr "Удалить пост"
+
+#: templates/news/post_delete.html:16
+msgid "Delete"
+msgstr "Удалить пост"
+
+#: templates/news/post_delete.html:17
+msgid "will be totally deleted. Are you sure"
+msgstr "будет безвозвратно удален. Удалить"
+
+#: templates/news/post_edit.html:10
+msgid "New Post"
+msgstr "Создать пост"
+
+#: templates/news/post_edit.html:12
+msgid "back"
+msgstr "назад"
+
+#: templates/news/post_edit.html:23
+msgid "Choose an Author"
+msgstr "Выбрать Автора"
+
+#: templates/news/post_edit.html:33 templates/news/post_search.html:28
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/news/post_edit.html:38
+msgid "You have to become an Author to create posts"
+msgstr "Для создания постов необходимо стать Автором"
+
+#: templates/news/post_edit.html:39
+msgid "Become an Author"
+msgstr "Стать Автором"
+
+#: templates/news/post_search.html:17
+msgid "Detailed search"
+msgstr "Детальный поиск"
+
+#: templates/news/post_search.html:34
+msgid "Clean filters"
+msgstr "Очистить фильтры"
+
+#: templates/news/post_search.html:40
+msgid "News found"
+msgstr "Новый поиск"
+
+#: templates/post_created_email.html:10
+msgid "Hello there! New"
+msgstr "Приветствуем ваc! Новая"
+
+#: templates/post_created_email.html:10
+msgid "article"
+msgstr "статья"
+
+#: templates/post_created_email.html:10
+msgid "has been added in subscribed category"
+msgstr "была добавлена в категории подписок"
+
+#: templates/post_created_email.html:11
+msgid "Your subscription in the following categories"
+msgstr "Вы подписаны на следующие категории"
+
+#~ msgid "topic"
+#~ msgstr "Тема"
+
+#~ msgid "text"
+#~ msgstr "текст"

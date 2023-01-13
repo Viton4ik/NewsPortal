@@ -1,0 +1,69 @@
+
+# для проверки безопасности вашего приложения
+python3 manage.py check --deploy
+
+# run the server
+py manage.py runserver
+python3 manage.py runserver
+
+# libraries
+pip freeze > requirements.txt
+pip3 install -r requirements.txt
+
+# celery
+celery -A News_Portal beat                    -  periodical tasks
+celery -A News_Portal worker -l INFO -P solo
+celery -A News_Portal beat -l INFO
+
+# flower
+pip3 install flower
+celery -A News_Portal flower --port=5555  (we can control the process through http://127.0.0.1:5555)
+
+# runapscheduler
+python manage.py runapscheduler
+
+# kill the port  - linux
+sudo netstat -tulpn | grep :8000
+kill -9 'N'
+
+# templates
+django-admin  startapp --template=accounts accounts_new   '{{app_name}}'
+django-admin startproject --template=project_name tutorial  '{{ project_name }}'
+
+
+# выгрузить все записи из нашей БД в JSON-файл
+python manage.py dumpdata --format=json > mydata.json
+python manage.py dumpdata -o data.json
+
+# для моего проекта!
+python manage.py dumpdata news.post --indent 2 > news_post.json
+python manage.py dumpdata auth.user --indent 2 > user.json
+python manage.py dumpdata news.author --indent 2 > news_author.json
+
+# выгрузить только приложение
+python -Xutf8 manage.py dumpdata news  > bb_data.json
+
+# загрузить из нашей БД
+python manage.py loaddata mydata.json
+
+
+# выгрузить все записи из нашей БД в XML-формате
+python manage.py dumpdata --format=xml > mydata.xml
+# выгрузить только приложение
+python manage.py dumpdata --format=xml news > sampledata.xml
+
+# загрузить из нашей БД
+python manage.py loaddata sampledata.xml
+
+# полная очистка базы данных, т. е. удаление всех данных из таблиц в ней
+python manage.py flush   # можно указать всё тот же параметр --database и очистить какую-то конкретную БД
+
+# translation function
+python manage.py makemessages -l <код языка*>
+python manage.py makemessages -l ru
+django-admin compilemessages 
+
+# добавляем переодчик в админку
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py update_translation_fields

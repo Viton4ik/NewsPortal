@@ -1,0 +1,21 @@
+
+# win
+cd ..
+venv\scripts\activate
+cd News_Portal
+
+
+#linux
+#1
+cd
+cd python_venv
+source venv/bin/activate
+cd /mnt/c/DevProject/DjangoProjects/News_Portal
+cd ~/DevProjects/DjangoProjects/News_Portal/Project/News_Portal
+
+#2
+python3 -m venv GST_venv
+source GST_venv/bin/activate
+cd /mnt/c/DevProject/DjangoProjects/Gastrans_project/GST_project
+
+redis-server
