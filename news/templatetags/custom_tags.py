@@ -28,13 +28,13 @@ def url_replace(context, **kwargs):
        d[k] = v
    return d.urlencode()
 
-#  
+# get timezones
 @register.simple_tag()
 def time_zones_():
    timezones = pytz.common_timezones
    return timezones
 
-#  
+#  get current time
 @register.simple_tag()
 def current_time_():
    current_time = timezone.localtime(timezone.now()).strftime('%d/%m/%Y %H:%M')

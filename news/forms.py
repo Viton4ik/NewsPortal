@@ -20,7 +20,8 @@ class PostForm(forms.ModelForm):
                   ('contentType'),
                   ('postCategory'),
               ]
-              
+
+        # labels to set translations      
         labels = {
             'topic': _('Topic'),
             'content': _('Content'),
@@ -55,14 +56,3 @@ class PostForm(forms.ModelForm):
             )
 
         return topic
-
-# # comments create
-# class CommentForm(forms.ModelForm):
-
-#     class Meta:
-
-#         model = Comment
-
-#         fields = [
-#                   ('text'),
-#               ]

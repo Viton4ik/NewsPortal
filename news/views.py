@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView, UpdateView, DeleteView, C
 from .models import Post, Category, Comment, Author, PostCategory
 from django.contrib.auth.models import User
 from .filters import PostFilter
-from .forms import PostForm#, CommentForm #AuthortForm
+from .forms import PostForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
@@ -99,10 +99,6 @@ class PostDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # to get comments
-        # context['comments'] = Comment.objects.filter(commentPost=self.object)
-        # to get comment_user - doesn't work properly!
-        # context['commentUser'] = User.objects.filter(comment=context['comments'][0])
 
         # FIXME: to get comments + username
         comment_user = []
@@ -110,14 +106,6 @@ class PostDetail(DetailView):
         for i, comment in enumerate(comments):
             comment_user.append(f"{User.objects.filter(comment=comments[i])[0]}: '{comments[i]}'")
         context['comments'] = comment_user
-
-        # TODO: in progress
-        # context['comments_text'] = Comment.objects.filter(commentPost=self.object).values_list('text', flat=True)
-        # context['commentPost'] = Comment.objects.filter(commentPost=self.object).values_list('commentPost', flat=True)
-        # context['comments_queryset'] = Comment.objects.filter(commentPost=self.object).values_list('commentUser', 'text')#, 'createTime', 'rating')
-        # context['commentUser'] = list(Comment.objects.filter(commentPost=self.object).values_list('commentUser'))
-        # context['text'] = list(Comment.objects.filter(commentPost=self.object).values_list('text'))
-        # context['comments_'] = list(context['comments_queryset'])
 
         # to get category
         context['categories'] = Category.objects.filter(post=self.object)

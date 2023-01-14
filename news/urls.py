@@ -8,8 +8,7 @@ from .views import PostList, PostDetail, PostUpdate, PostDelete, PostSearch, cre
    html_403, CategoryListView, subscribe, author_create, comment_create#, AuthorCreate #PostCreate
 
 urlpatterns = [
-   # path('', cache_page(60)(PostList.as_view()), name='posts_list'), #FIXME
-   path('', PostList.as_view(), name='posts_list'), #FIXME
+   path('', cache_page(60)(PostList.as_view()), name='posts_list'), 
    # pk — это первичный ключ, который будет выводиться у нас в шаблон
    # int — указывает на то, что принимаются только целочисленные значения
    path('<int:id>', PostDetail.as_view(), name='post_detail'),
