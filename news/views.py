@@ -26,12 +26,126 @@ from django.utils.translation import gettext as _
 
 import logging
 
+# rest_framework
+import json
+from rest_framework import viewsets
+from rest_framework import permissions            # https://www.django-rest-framework.org/api-guide/permissions/
+from rest_framework.response import Response
+import django_filters.rest_framework
+from news.serializers import *
+from news.models import *
+
 # time localisation
 import pytz
 from django.utils import timezone
 
 # logger = logging.getLogger(__name__)
 logger = logging.getLogger('news')
+
+
+# ===== rest_framework =====
+# create a ReadOnly
+class ReadOnly(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return request.method in permissions.SAFE_METHODS
+
+
+class PostViewset(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_fields = ["author", "id", "contentType","rating"]
+    
+    # deny all by default using rest_framework 
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class CategoryViewset(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+    # set a readOnly by default using rest_framework
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class AuthorViewset(viewsets.ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+
+    # set a IsAuthenticated rights by default using rest_framework
+    permission_classes = [permissions.IsAuthenticated]
+
+class UserViewset(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    # set a IsAdminUser rights by default using rest_framework
+    permission_classes = [permissions.IsAdminUser]
+
+
+class CommentViewset(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()#.filter(is_active=True) #- we won't see this instance in API 
+    serializer_class = CommentSerializer
+
+    # set a readOnly
+    permission_classes = [permissions.IsAuthenticated|ReadOnly]
+
+    def destroy(self, request, pk, format=None): # set new functionality for delete
+        instance = self.get_object()
+        instance.is_active = False
+        instance.save()
+        return Response(status=204) #status.HTTP_204_NO_CONTENT
+
+# ==========================
+
+
+# ===== REST API =====
+
+def get_news_list(_):
+    news_list = Post.objects.all().values(
+        'id',
+        'topic',
+        )
+    return HttpResponse(content=news_list, status=200)
+
+
+def get_news(_, pk):
+    news = Post.objects.filter(pk=pk)
+    return HttpResponse(content=news, status=200)
+    
+
+def create_news(request):
+    if request.method == 'POST':
+    # body = json.loads(request.body.decode('utf-8'))
+        body = json.loads(request.body)
+        news = Post.objects.create(
+            topic=body['topic'],
+            content=body['content'],
+            author=body['author'], 
+            contentType=body['contentType'], 
+            )
+        return HttpResponse(content=news, status=201)
+
+
+
+def edit_news(request, pk):
+    body = json.loads(request.body.decode('utf-8'))
+    news = Post.objects.get(pk=pk)
+    for attr, value in body.items():
+        setattr(news, attr, value)
+    news.save()
+    data = {'topic': news.topic, 'content': news.content, 'author': news.author, 'contentType': news.contentType}
+    print(data)
+    return HttpResponse(content=data, status=200)
+
+
+def delete_news(_, pk):
+    news = Post.objects.get(pk=pk).delete()
+    return HttpResponse(content=news, status=204)
+
+# =======================
+
 
 class PostList(ListView):
     model = Post

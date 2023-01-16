@@ -20,11 +20,13 @@ django-allauth==0.51.0
 django-apscheduler==0.6.2
 django-filter==22.1
 django-modeltranslation==0.18.7
+djangorestframework==3.14.0
 flake8==6.0.0
 flower==1.2.0
 humanize==4.4.0
 idna==3.4
 kombu==5.2.4
+Markdown==3.4.1
 mccabe==0.7.0
 oauthlib==3.2.2
 packaging==21.3

@@ -104,6 +104,8 @@ class Comment(models.Model):
     commentPost = models.ForeignKey(Post, on_delete=models.CASCADE)
     commentUser = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    is_active = models.BooleanField(default=True) # не хотим удалять из базы, а хотим чтобы поле is_active получало значение False
+
     def like(self):
         self.rating += 1
         self.save()

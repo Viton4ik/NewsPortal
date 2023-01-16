@@ -1,0 +1,76 @@
+openapi: 3.0.2
+info:
+ title: 'Some application'
+ version: '0.1'
+paths:
+  /news/api/news/:
+    get:
+      operationId: Newslist
+      description: 'List of News'
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/News'
+          description: ''
+      tags:
+      - news
+    post:
+     operationId: CreateNews
+     description: 'Create news'
+     parameters: []
+     requestBody:
+       content:
+         application/json:
+           schema:
+             $ref: '#/components/schemas/News'
+     responses:
+       '201':
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/News'
+         description: ''
+     tags:
+     - news
+  /news/api/news/{id}/:
+    get:
+      operationId: News
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this school.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/News'
+          description: ''
+      tags:
+      - news
+components:
+ schemas:
+  News:
+    type: object
+    properties:
+      id:
+        type: integer
+        readOnly: true
+      topic:
+        type: string
+        maxLength: 64
+      # url:
+      #   type: string
+      #   readOnly: true
+    required:
+    - name
